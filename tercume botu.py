@@ -45,4 +45,10 @@ def search2(message):
     s = a.text
     print(s)
     bot.send_message(message.chat.id, a.text)
+    
+@bot.message_handler(content_types=['photo', 'audio', 'document', 'video', 'voice', 'sticker', 'location', 'contact'])
+def handle_media(message):
+    # Simply ignore incoming media files and don't do anything with them
+    pass
+
 bot.polling()
